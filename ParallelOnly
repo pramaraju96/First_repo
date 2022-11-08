@@ -58,11 +58,11 @@ pipeline {
                 }
             }
         }
-                stage('STAGE2') {
-                      steps{
-                        echo "IN STAGE2"
-                        snDevOpsChange()
-                }
+            stage('STAGE2') {
+                  steps{
+                    echo "IN STAGE2"
+                    snDevOpsChange()
+            }
 
         }
     }
