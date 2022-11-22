@@ -7,16 +7,15 @@ import com.lib.Library;
 import static org.junit.Assert.assertTrue;
 
 import org.testng.Assert;
-import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-public class SecondTest {
+public class secondTest {
 
 	@Test
 	public void test2() {
 
 		for (int i = 0; i < 200; i++)
-			System.out.print("Test summary #" + i);
+			System.out.print("Test summary #" + i + "\n");
 
 		Assert.assertTrue(true, "test is passed");
 	}
