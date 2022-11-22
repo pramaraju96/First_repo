@@ -8,7 +8,7 @@ public class JunitTestRunner {
 
 
 	public static void main(String[] args) {
-		Result result = JUnitCore.runClasses(firstTest.class);
+		Result result = JUnitCore.runClasses(FirstTest.class);
 
 		for (Failure failure : result.getFailures()) {
 			// removed sout statement to increase the coverage
