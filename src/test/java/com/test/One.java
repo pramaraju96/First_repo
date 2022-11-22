@@ -1,11 +1,11 @@
 package com.test;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class One {
 	// private static final String BCFKS_WRONG_PASSWORD_ERROR = "MAC calculation failed";
 	String message = "foo";
-	private static final List<String> fValidateOrderedList;
+	private List<String> fValidateOrderedList;
 
 	public String foo() {
 		return message;
