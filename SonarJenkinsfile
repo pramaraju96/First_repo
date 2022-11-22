@@ -55,10 +55,10 @@ def sonarSummaries() {
 	 //}
 
     withSonarQubeEnv('sonarQube_local'){
-      if(fileExists("sonar-project.properties"){
-          sh '${SCANNER_HOME}/bin/sonar-scanner'
-        }else{
-          sh '${SCANNER_HOME}/bin/sonar-scanner -Dproject.settings=${SCANNER_HOME}/conf/qa-sonar-scanner.properties'
+      if(fileExists("sonar-project.properties")) {
+      	sh '${SCANNER_HOME}/bin/sonar-scanner'
+        } else {
+            sh '${SCANNER_HOME}/bin/sonar-scanner -Dproject.settings=${SCANNER_HOME}/conf/qa-sonar-scanner.properties'
    		  //sh '${SCANNER_HOME}/bin/sonar-scanner -Dproject.settings=${SCANNER_HOME}/conf/sonar-scanner.properties'
         }
 	  }
