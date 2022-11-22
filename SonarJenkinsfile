@@ -62,7 +62,7 @@ def sonarSummaries() {
    		  //sh '${SCANNER_HOME}/bin/sonar-scanner -Dproject.settings=${SCANNER_HOME}/conf/sonar-scanner.properties'
         }
 	  }
-   // timeout(time: 1, unit: 'MINUTES') {
-   //     waitForQualityGate abortPipeline: false
-   // }
+    timeout(time: 1, unit: 'MINUTES') {
+        waitForQualityGate abortPipeline: false
+    }
 } // end of def sonarsummaries
