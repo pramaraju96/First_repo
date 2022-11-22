@@ -16,7 +16,7 @@ public class SecondTest {
 	public void test2() {
 
 		for (int i = 0; i < 200; i++)
-			System.out.print("test summaries....");
+			System.out.print("Test summary #" + i);
 
 		Assert.assertTrue(true, "test is passed");
 	}
