@@ -18,18 +18,32 @@ import org.junit.experimental.categories.Category;
 
 public class firstTest {
 
-	
+
+	public static String getPayload(final String fileNm) throws IOException, JSONException {
+
+		final File file = new File("src/test/resources/" + fileNm);
+
+		final Path path = file.toPath();
+
+		final StringBuilder sb = new StringBuilder();
+		final List<String> content = Files.readAllLines(path, Charset.defaultCharset());
+
+		for (final String string : content) {
+
+			sb.append(string);
+		}
+		return sb.toString();
+	}
+
 	@Test
 	@Category(com.test.firstTest.class)
 	public void testmethod1() throws JSONException, IOException {
 
 		String payload = getPayload("gitLabjob.json");
 		JSONObject json = new JSONObject(payload);
-		System.out.println(json.get("build_id"));
 
 		System.out.println("after update");
 		json.put("build_id", 101);
-		System.out.println(json.get("build_id"));
 
 	}
 
@@ -39,37 +53,17 @@ public class firstTest {
 		assertTrue(true);
 	}
 
-	public static String getPayload(final String fileNm) throws IOException, JSONException {
-
-		final File file = new File("src/test/resources/" + fileNm);
-
-		final Path path = file.toPath();
-		System.out.println("-------------path for json file :" + file.getAbsolutePath());
-
-		final StringBuilder sb = new StringBuilder();
-		final List<String> content = Files.readAllLines(path, Charset.defaultCharset());
-
-		for (final String string : content) {
-
-			sb.append(string);
-		}
-
-		final String jsonstring = sb.toString();
-
-		return jsonstring;
-	}
-
 	@Test
 	@Category(com.test.firstTest.class)
 	public void emptytest() {
-
+		/*
+		// Empty test
+		*/
 	}
 
 	@Test
 	@Category(com.test.firstTest.class)
 	public void failedtest() {
-
-//		assertEquals(4, 5);
 		assertFalse(true, "balu-test is failed");
 	}
 
@@ -77,7 +71,8 @@ public class firstTest {
 	@Test()
 	@Category(com.test.firstTest.class)
 	public void disabledtest() {
-		System.out.println("disabled test");
-
+		/*
+		// Disabled test
+		*/
 	}
 }
