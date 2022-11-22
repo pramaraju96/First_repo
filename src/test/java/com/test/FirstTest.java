@@ -16,7 +16,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-public class firstTest {
+public class FirstTest {
 
 
 	public static String getPayload(final String fileNm) throws IOException, JSONException {
@@ -36,7 +36,7 @@ public class firstTest {
 	}
 
 	@Test
-	@Category(com.test.firstTest.class)
+	@Category(com.test.FirstTest.class)
 	public void testmethod1() throws JSONException, IOException {
 
 		String payload = getPayload("gitLabjob.json");
@@ -48,13 +48,13 @@ public class firstTest {
 	}
 
 	@Test
-	@Category(com.test.firstTest.class)
+	@Category(com.test.FirstTest.class)
 	public void testmethod2() {
 		assertTrue(true);
 	}
 
 	@Test
-	@Category(com.test.firstTest.class)
+	@Category(com.test.FirstTest.class)
 	public void emptytest() {
 		/*
 		// Empty test
@@ -62,14 +62,14 @@ public class firstTest {
 	}
 
 	@Test
-	@Category(com.test.firstTest.class)
+	@Category(com.test.FirstTest.class)
 	public void failedtest() {
 		assertFalse(true, "balu-test is failed");
 	}
 
 	@Ignore
 	@Test()
-	@Category(com.test.firstTest.class)
+	@Category(com.test.FirstTest.class)
 	public void disabledtest() {
 		/*
 		// Disabled test
