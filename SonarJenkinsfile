@@ -45,7 +45,7 @@ pipeline {
 		    script {
 		    	echo 'Inside script step...'
 		    	changeRequestId = snDevOpsGetChangeNumber()
-			echo 'Change Request Id without any attributes... ${changeRequestId}'
+			echo "Change Request Id without any attributes... ${changeRequestId}"
 		    }
 		    
                  }
