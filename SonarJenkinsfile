@@ -29,6 +29,7 @@ pipeline {
                 junit "**/target/surefire-reports/*.xml"
              }
            }
+	   sleep(120);
        }
        
        stage('Pre-Prod') {
