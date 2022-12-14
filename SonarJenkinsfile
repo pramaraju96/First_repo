@@ -23,13 +23,14 @@ pipeline {
        stage('Test') {
            steps {
               sh 'mvn test'
+	      sleep(120);
            }
            post {
              always {
                 junit "**/target/surefire-reports/*.xml"
              }
            }
-	   sleep(120);
+	  
        }
        
        stage('Pre-Prod') {
