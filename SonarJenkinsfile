@@ -43,7 +43,7 @@ pipeline {
        }
       stage('Deploy') {
                  steps {
-		    stageName = "Deploy"
+		    stageName = 'Deploy'
                     echo 'Deploying the change....'
                     snDevOpsChange(ignoreErrors:false)
 		    script {
