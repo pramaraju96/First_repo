@@ -44,10 +44,11 @@ pipeline {
        }
       stage('Deploy') {
                  steps {
-		    stageName = "Deploy"
+		    
                     echo 'Deploying the change....'
                     snDevOpsChange(ignoreErrors:false)
 		    script {
+		        stageName = "Deploy"
 		    	echo 'Inside script step...'
 		    	//changeRequestId = snDevOpsGetChangeNumber()
 			changeRequestId = snDevOpsGetChangeNumber(changeDetails: """{"build_number":"${env.BUILD_NUMBER}","pipeline_name":pipelineName,"stage_name":"${stageName}"}""")
