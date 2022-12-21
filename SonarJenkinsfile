@@ -5,7 +5,7 @@ def semanticVersion = "${env.BUILD_NUMBER}.0.0"
 def packageName = "package_devops_${env.BUILD_NUMBER}"
 def version = "${env.BUILD_NUMBER}.0"
 def changeRequestId = "defaultChangeRequestId"
-def stageName = ""
+def stageName = "null"
 
 pipeline {
   agent any
@@ -44,7 +44,7 @@ pipeline {
        }
       stage('Deploy') {
                  steps {
-		    stageName = 'Deploy'
+		    stageName = "Deploy"
                     echo 'Deploying the change....'
                     snDevOpsChange(ignoreErrors:false)
 		    script {
