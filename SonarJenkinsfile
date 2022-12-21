@@ -5,6 +5,7 @@ def semanticVersion = "${env.BUILD_NUMBER}.0.0"
 def packageName = "package_devops_${env.BUILD_NUMBER}"
 def version = "${env.BUILD_NUMBER}.0"
 def changeRequestId = "defaultChangeRequestId"
+def stageName = ""
 
 pipeline {
   agent any
