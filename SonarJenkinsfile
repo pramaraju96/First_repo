@@ -5,7 +5,6 @@ def semanticVersion = "${env.BUILD_NUMBER}.0.0"
 def packageName = "package_devops_${env.BUILD_NUMBER}"
 def version = "${env.BUILD_NUMBER}.0"
 def changeRequestId = "defaultChangeRequestId"
-def stageName = "null"
 
 pipeline {
   agent any
@@ -48,10 +47,9 @@ pipeline {
                     echo 'Deploying the change....'
                     snDevOpsChange(ignoreErrors:false)
 		    script {
-		        stageName = "Deploy"
 		    	echo 'Inside script step...'
-		    	//changeRequestId = snDevOpsGetChangeNumber()
-			changeRequestId = snDevOpsGetChangeNumber(changeDetails: """{"build_number":"${env.BUILD_NUMBER}","pipeline_name":pipelineName,"stage_name":"${stageName}"}""")
+		    	changeRequestId = snDevOpsGetChangeNumber()
+			//changeRequestId = snDevOpsGetChangeNumber(changeDetails: """{"build_number":"${env.BUILD_NUMBER}","pipeline_name":pipelineName,"stage_name":"${stageName}"}""")
 			echo "Change Request Id without any attributes... ${changeRequestId}"
 		    }
 		    
