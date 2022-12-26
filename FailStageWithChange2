@@ -43,13 +43,8 @@ pipeline {
       stage('Deploy') {
            steps {
               sonarSummaries()
+	      snDevOpsChange(ignoreErrors:false)
            }
-          post {
-             always {
-                snDevOpsChange(ignoreErrors:false)
-             }
-           }
-      
        }
  }
 }
