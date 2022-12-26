@@ -51,8 +51,8 @@ pipeline {
 def sonarSummaries() {
 
    withSonarQubeEnv('Sonar_Cloud') {
-       sh '${SCANNER_HOME}/bin/sonar-scanner -Dproject.settings=${SCANNER_HOME}/conf/qa-sonar-scanner-cloud.properties'
-   
+       //sh '${SCANNER_HOME}/bin/sonar-scanner -Dproject.settings=${SCANNER_HOME}/conf/qa-sonar-scanner-cloud.properties'
+       sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=pramaraju96_First_repo -Dsonar.host.url=https://sonarcloud.io -Dsonar.java.binaries=target/ -Dsonar.branch.name=master'
 	}
 	
     //withSonarQubeEnv('sonarQube_local') {
