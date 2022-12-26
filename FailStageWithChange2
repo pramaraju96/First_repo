@@ -42,8 +42,9 @@ pipeline {
        }
       stage('Deploy') {
            steps {
-              sonarSummaries()
+              //sonarSummaries()
 	      snDevOpsChange(ignoreErrors:false)
+	      sh 'exit 1'
            }
        }
  }
