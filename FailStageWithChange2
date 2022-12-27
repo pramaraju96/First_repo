@@ -44,7 +44,7 @@ pipeline {
            steps {
               //sonarSummaries()
 	      snDevOpsChange(ignoreErrors:false)
-	      sh 'exit 1'
+	      //sh 'exit 1'
            }
        }
  }
