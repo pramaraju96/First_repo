@@ -113,7 +113,7 @@ jobs:
                   # Github Context
                   context-github: ${{ toJSON(github) }}
                   # Display Name of the Job
-                  job-name: 'Sonar Scan Results'
+                  job-name: 'Test'
                   # Sonar Host URL
                   sonar-host-url: ${{ secrets.SONAR_URL }}
                   # Sonar Project Key
