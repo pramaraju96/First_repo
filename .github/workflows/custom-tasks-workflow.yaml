@@ -14,17 +14,17 @@ name: GitHub Actions Workflow with SNOW custom tasks
 #   pull_request:
 #     types: [opened, synchronize, reopened]
 
-on: #workflow_dispatch
-  pull_request_target:
-    types:
-      - closed
+on: workflow_dispatch
+#  pull_request_target:
+#    types:
+#      - closed
 
 jobs:
 
     build:
         # Running your workflow when a pull request merges
         # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#running-your-workflow-when-a-pull-request-merges-1
-        if: github.event.pull_request.merged == true
+        #if: github.event.pull_request.merged == true
         name: Build
         runs-on: ubuntu-latest
         steps:           
@@ -52,7 +52,7 @@ jobs:
                   restore-keys: ${{ runner.os }}-m2
 
     test:
-        if: github.event.pull_request.merged == true
+        #if: github.event.pull_request.merged == true
         name: Test
         needs: build
         runs-on: ubuntu-latest
@@ -149,7 +149,7 @@ jobs:
                   test-type: # optional, default is JUnit
 
     integrationTest:
-        if: github.event.pull_request.merged == true
+        #if: github.event.pull_request.merged == true
         name: Integration Tests
         needs: test
         runs-on: ubuntu-latest
@@ -235,7 +235,7 @@ jobs:
                   job-name: 'Integration Tests'
 
     deploy:
-        if: github.event.pull_request.merged == true
+        #if: github.event.pull_request.merged == true
         name: Deploy
         needs: integrationTest
         runs-on: ubuntu-latest
