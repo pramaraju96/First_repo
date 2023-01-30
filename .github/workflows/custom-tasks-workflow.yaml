@@ -274,13 +274,12 @@ jobs:
                       }
                   }'
 
-            - name: Run deployment scripts
-              run: echo Completed Deployment
-
+#             - name: Run deployment scripts
+#               run: echo Completed Deployment
 
     postdeploy:
         #if: github.event.pull_request.merged == true
-        name: PostDeploy
+        name: Post Deploy
         needs: deploy
         runs-on: ubuntu-latest
         steps:
