@@ -273,8 +273,11 @@ jobs:
                       }
                   }'
 
-#             - name: Run deployment scripts
-#               run: echo Completed Deployment
+            - name: Sleep for 180 seconds
+              uses: jakejarvis/wait-action@master
+              with:
+                   time: '180s'
+
 
     postdeploy:
         #if: github.event.pull_request.merged == true
