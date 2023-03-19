@@ -46,5 +46,3 @@ RAJU-67
 RAJU-8
 RAJU-67
 RAJU-67
-dummy
-test commit
