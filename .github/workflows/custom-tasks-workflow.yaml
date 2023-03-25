@@ -120,7 +120,8 @@ jobs:
                   # Sonar Host URL
                   sonar-host-url: ${{ secrets.SONAR_URL }}
                   # Sonar Project Key
-
+                  sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
+                  
             #- name: Run JUnit Tests
             #  run: mvn test -Dmaven.test.failure.ignore=true surefire-report:report
 
