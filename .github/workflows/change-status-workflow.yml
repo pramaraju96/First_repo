@@ -270,13 +270,11 @@ jobs:
                           "implementation_plan": "Software update is tested and results can be found in Test Summaries Tab.",
                           "backout_plan": "When software fails in production, the previous software release will be re-deployed.",
                           "test_plan": "Testing if the software was successfully deployed"
-                      }
+                      }, 
                   }'
-
-            - name: Sleep for 180 seconds
-              uses: jakejarvis/wait-action@master
-              with:
-                   time: '180s'
+                  changeCreationTimeOut: '3600'
+                  abortOnChangeCreationFailure: true
+                  abortOnChangeStepTimeout: true
 
 
     postdeploy:
